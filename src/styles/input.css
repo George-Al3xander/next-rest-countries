@@ -1,16 +1,21 @@
 
-/* .region-select ul{
-    visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-    
-  } */
+  .loader {
+    width: 48px;
+    height: 48px;
+    z-index: 4;
+    border: 5px solid gray;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
   
-  
-  /* .region-select:hover ul, .region-select ul:hover,  .region-select:focus ul{
-    visibility: visible;
-    opacity: 1;
-  
-
-  } */
-  
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 

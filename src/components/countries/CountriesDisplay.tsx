@@ -1,7 +1,6 @@
 import { CountryDetailsType, SearchParams} from "@/types/types"
 import CountryPreview from "./CountryPreview"
-
-
+import { MdMoodBad } from "react-icons/md";
 
 
 
@@ -21,13 +20,15 @@ const CountriesDisplay = async ({searchParams}:{searchParams: SearchParams}) => 
         }
     }) as CountryDetailsType[]
     
-    return(<ul className="py-2 grid md:grid-cols-2 lg:grid-cols-4  grid-row gap-10 md:gap-6">
-        
-        {data.length > 0 ?
-        data.map((country) =>  <CountryPreview key={country.name.official} {...country}/>)
-        :
-        "No results"
-        }
+    if(data.length == 0) {
+        return <div className="flex self-end opacity-70 text-center items-center flex-col gap-4 justify-center w-[100%]">
+            <MdMoodBad size={60}/>
+            <h3 className="text-2xl font-bold">Sorry, we couldn&apos;t find any results</h3>
+        </div>
+    }
+
+    return(<ul className="py-2 grid md:grid-cols-2 lg:grid-cols-4  grid-row gap-10 md:gap-6">              
+        {data.map((country) =>  <CountryPreview key={country.name.official} {...country}/>)}        
     </ul>)
 }
 
