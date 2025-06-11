@@ -3,6 +3,8 @@ import "@/styles/main.css";
 import { LayoutProps } from "@/types/app";
 import { TemplateScaffold } from "@/ui/components/templates/Scaffold";
 import { geistMono, geistSans } from "@/ui/fonts";
+import { Logo } from "./_components/Logo";
+
 export { metadata } from "@/configs/metadata";
 
 export default function RootLayout({ children }: LayoutProps) {
@@ -13,7 +15,13 @@ export default function RootLayout({ children }: LayoutProps) {
         >
             <body className="font-geist-mono">
                 <Providers>
-                    <TemplateScaffold header={<>Header</>}>
+                    <TemplateScaffold
+                        header={
+                            <>
+                                <Logo />
+                            </>
+                        }
+                    >
                         {children}
                     </TemplateScaffold>
                 </Providers>
