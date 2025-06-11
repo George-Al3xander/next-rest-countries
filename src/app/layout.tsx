@@ -4,6 +4,7 @@ import { LayoutProps } from "@/types/app";
 import { TemplateScaffold } from "@/ui/components/templates/Scaffold";
 import { geistMono, geistSans } from "@/ui/fonts";
 import { Logo } from "./_components/Logo";
+import { ModeToggle } from "./_components/ModeToggle";
 
 export { metadata } from "@/configs/metadata";
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps) {
                         header={
                             <>
                                 <Logo />
+                                <ModeToggle />
                             </>
                         }
                     >
