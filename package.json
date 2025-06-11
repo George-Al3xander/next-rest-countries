@@ -1,31 +1,41 @@
 {
-  "name": "next-countries",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@fontsource/roboto": "^5.0.8",
-    "lodash": "^4.17.21",
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^5.0.1"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.202",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
-  }
+    "name": "next-rest-countries",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "pnpm exec prettier --write",
+        "prepare": "husky",
+        "pre-commit": "lint-staged"
+    },
+    "dependencies": {
+        "@t3-oss/env-nextjs": "^0.11.1",
+        "next": "15.2.4",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "zod": "^3.25.57"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.8.1",
+        "@commitlint/config-conventional": "^19.8.1",
+        "@eslint/eslintrc": "^3.3.1",
+        "@total-typescript/ts-reset": "^0.6.1",
+        "@types/node": "^20.19.0",
+        "@types/react": "^19.1.7",
+        "@types/react-dom": "^19.1.6",
+        "eslint": "^9.28.0",
+        "eslint-config-next": "15.2.4",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.5.2",
+        "postcss": "^8.5.4",
+        "prettier": "3.4.2",
+        "prettier-plugin-organize-imports": "^4.1.0",
+        "prettier-plugin-tailwindcss": "^0.6.12",
+        "tailwindcss": "^3.4.17",
+        "tsc-files": "^1.1.4",
+        "typescript": "^5.8.3"
+    }
 }
