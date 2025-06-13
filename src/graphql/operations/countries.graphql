@@ -1,0 +1,10 @@
+query getCountries {
+    countries {
+        name
+        flag
+        population
+        region
+        capital
+        alpha2Code
+    }
+}
