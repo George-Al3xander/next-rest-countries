@@ -1,23 +1,18 @@
+import { CountryResolver } from "@/graphql/resolvers";
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { NextRequest } from "next/server";
+import { buildSchema } from "type-graphql";
 
-const typeDefs = `#graphql
-type Query {
-    hello: String
-}
-`;
+const schema = await buildSchema({
+    resolvers: [CountryResolver],
+});
 
-const resolvers = {
-    Query: {
-        hello: () => "world",
-    },
-};
-
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ schema });
 
 const handler = startServerAndCreateNextHandler<NextRequest>(server, {
     context: async (req) => ({ req }),
 });
 
-export { handler as GET, handler as POST };
+export const GET = async (request: NextRequest) => handler(request);
+export const POST = async (request: NextRequest) => handler(request);
