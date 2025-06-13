@@ -1,16 +1,4 @@
-import { Language } from "./language";
-import { State } from "./state";
+import { GetCountriesQuery } from "@/graphql/generated";
 
-export type Country = {
-    name: string;
-    code: string;
-    capital: string | null;
-    continent: {
-        name: string;
-        code: string;
-    };
-    languages: Language[];
-    emoji: string;
-    currency: string | null;
-    states: State[];
-};
+export type CountryBasic = GetCountriesQuery["countries"][number];
+export type CountryExtended = unknown;
