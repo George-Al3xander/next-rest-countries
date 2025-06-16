@@ -1,4 +1,5 @@
 import { CountryBasic } from "@/types/models/country";
+import { Title } from "@/ui/components/atoms/Title";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,7 +27,7 @@ export const CountryCard = ({
                 />
             </div>
             <div className="my-auto flex flex-col gap-4 p-6">
-                <h2 className="text-2xl font-bold">{name}</h2>
+                <Title>{name}</Title>
                 <ul className="flex flex-col gap-2">
                     {DISPLAY_FIELDS.map((k) => {
                         const value = props[k];
