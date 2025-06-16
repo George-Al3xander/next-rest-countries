@@ -86,6 +86,11 @@ export type Language = {
 export type Query = {
     __typename?: "Query";
     countries: Array<Country>;
+    country?: Maybe<Country>;
+};
+
+export type QueryCountryArgs = {
+    code: Scalars["String"]["input"];
 };
 
 export type RegionalBloc = {
@@ -125,6 +130,28 @@ export type GetCountriesQuery = {
     }>;
 };
 
+export type GetCountryQueryVariables = Exact<{
+    code: Scalars["String"]["input"];
+}>;
+
+export type GetCountryQuery = {
+    __typename?: "Query";
+    country?: {
+        __typename?: "Country";
+        name: string;
+        flag: string;
+        population: number;
+        region: string;
+        capital?: string | null;
+        alpha2Code: string;
+        subregion: string;
+        topLevelDomain: Array<string>;
+        borders?: Array<string> | null;
+        currencies?: Array<{ __typename?: "Currency"; name: string }> | null;
+        languages: Array<{ __typename?: "Language"; name: string }>;
+    } | null;
+};
+
 export const GetCountriesDocument = gql`
     query getCountries {
         countries {
@@ -134,6 +161,27 @@ export const GetCountriesDocument = gql`
             region
             capital
             alpha2Code
+        }
+    }
+`;
+export const GetCountryDocument = gql`
+    query getCountry($code: String!) {
+        country(code: $code) {
+            name
+            flag
+            population
+            region
+            capital
+            alpha2Code
+            subregion
+            topLevelDomain
+            currencies {
+                name
+            }
+            languages {
+                name
+            }
+            borders
         }
     }
 `;
@@ -174,6 +222,27 @@ export function getSdk(
                         signal,
                     }),
                 "getCountries",
+                "query",
+                variables,
+            );
+        },
+        getCountry(
+            variables: GetCountryQueryVariables,
+            requestHeaders?: GraphQLClientRequestHeaders,
+            signal?: RequestInit["signal"],
+        ): Promise<GetCountryQuery> {
+            return withWrapper(
+                (wrappedRequestHeaders) =>
+                    client.request<GetCountryQuery>({
+                        document: GetCountryDocument,
+                        variables,
+                        requestHeaders: {
+                            ...requestHeaders,
+                            ...wrappedRequestHeaders,
+                        },
+                        signal,
+                    }),
+                "getCountry",
                 "query",
                 variables,
             );

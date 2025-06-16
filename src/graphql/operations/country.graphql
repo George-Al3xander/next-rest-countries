@@ -1,0 +1,19 @@
+query getCountry($code: String!) {
+    country(code: $code) {
+        name
+        flag
+        population
+        region
+        capital
+        alpha2Code
+        subregion
+        topLevelDomain
+        currencies {
+            name
+        }
+        languages {
+            name
+        }
+        borders
+    }
+}
