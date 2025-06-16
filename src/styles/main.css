@@ -113,6 +113,6 @@
         @apply bg-background text-foreground;
     }
     .custom-container {
-        @apply mx-auto w-[min(90%,60rem)] py-6;
+        @apply mx-auto w-[min(90%,80rem)] py-6;
     }
 }
