@@ -1,5 +1,6 @@
 import { CountryBasic } from "@/types/models/country";
 import { Title } from "@/ui/components/atoms/Title";
+import { DataList } from "@/ui/components/molecules/DataList";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,7 @@ export const CountryCard = ({
     alpha2Code,
     ...props
 }: CountryBasic) => {
+    const data = DISPLAY_FIELDS.map((k) => ({ title: k, value: props[k] }));
     return (
         <Link
             className="flex h-full flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-xl"
@@ -28,26 +30,7 @@ export const CountryCard = ({
             </div>
             <div className="my-auto flex flex-col gap-4 p-6">
                 <Title>{name}</Title>
-                <ul className="flex flex-col gap-2">
-                    {DISPLAY_FIELDS.map((k) => {
-                        const value = props[k];
-                        if (!value) return null;
-
-                        const text =
-                            typeof value === "number"
-                                ? value.toLocaleString()
-                                : value;
-
-                        return (
-                            <li key={k}>
-                                <span className="font-semibold capitalize">
-                                    {k}:{" "}
-                                </span>
-                                {text}
-                            </li>
-                        );
-                    })}
-                </ul>
+                <DataList data={data} />
             </div>
         </Link>
     );
