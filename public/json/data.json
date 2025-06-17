@@ -962,7 +962,7 @@
     "area": 86600,
     "gini": 26.6,
     "timezones": ["UTC+04:00"],
-    "borders": ["ARM", "GEO", "IRN", "RUS", "TUR"],
+    "borders": ["ARM", "GEO", "IRN", "TUR"],
     "nativeName": "Azərbaycan",
     "numericCode": "031",
     "flags": {
@@ -1282,7 +1282,7 @@
     "area": 207600,
     "gini": 25.3,
     "timezones": ["UTC+03:00"],
-    "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
+    "borders": ["LVA", "LTU", "POL", "UKR"],
     "nativeName": "Белару́сь",
     "numericCode": "112",
     "flags": {
@@ -3231,7 +3231,6 @@
       "MAC",
       "MNG",
       "PAK",
-      "RUS",
       "TJK",
       "VNM",
       "NPL"
@@ -4899,7 +4898,7 @@
     "area": 45227,
     "gini": 30.3,
     "timezones": ["UTC+02:00"],
-    "borders": ["LVA", "RUS"],
+    "borders": ["LVA"],
     "nativeName": "Eesti",
     "numericCode": "233",
     "flags": {
@@ -5237,7 +5236,7 @@
     "area": 338424,
     "gini": 27.3,
     "timezones": ["UTC+02:00"],
-    "borders": ["NOR", "SWE", "RUS"],
+    "borders": ["NOR", "SWE"],
     "nativeName": "Suomi",
     "numericCode": "246",
     "flags": {
@@ -5707,7 +5706,7 @@
     "area": 69700,
     "gini": 35.9,
     "timezones": ["UTC-04:00"],
-    "borders": ["ARM", "AZE", "RUS", "TUR"],
+    "borders": ["ARM", "AZE", "TUR"],
     "nativeName": "საქართველო",
     "numericCode": "268",
     "flags": {
@@ -7905,7 +7904,7 @@
     "area": 2724900,
     "gini": 27.8,
     "timezones": ["UTC+05:00", "UTC+06:00"],
-    "borders": ["CHN", "KGZ", "RUS", "TKM", "UZB"],
+    "borders": ["CHN", "KGZ", "TKM", "UZB"],
     "nativeName": "Қазақстан",
     "numericCode": "398",
     "flags": {
@@ -8312,7 +8311,7 @@
     "area": 64559,
     "gini": 35.1,
     "timezones": ["UTC+02:00"],
-    "borders": ["BLR", "EST", "LTU", "RUS"],
+    "borders": ["BLR", "EST", "LTU"],
     "nativeName": "Latvija",
     "numericCode": "428",
     "flags": {
@@ -8732,7 +8731,7 @@
     "area": 65300,
     "gini": 35.7,
     "timezones": ["UTC+02:00"],
-    "borders": ["BLR", "LVA", "POL", "RUS"],
+    "borders": ["BLR", "LVA", "POL"],
     "nativeName": "Lietuva",
     "numericCode": "440",
     "flags": {
@@ -9978,7 +9977,7 @@
     "area": 1564110,
     "gini": 32.7,
     "timezones": ["UTC+07:00", "UTC+08:00"],
-    "borders": ["CHN", "RUS"],
+    "borders": ["CHN"],
     "nativeName": "Монгол улс",
     "numericCode": "496",
     "flags": {
@@ -11095,7 +11094,7 @@
     "demonym": "North Korean",
     "area": 120538,
     "timezones": ["UTC+09:00"],
-    "borders": ["CHN", "KOR", "RUS"],
+    "borders": ["CHN", "KOR"],
     "nativeName": "북한",
     "numericCode": "408",
     "flags": {
@@ -11219,7 +11218,7 @@
     "area": 323802,
     "gini": 27.6,
     "timezones": ["UTC+01:00"],
-    "borders": ["FIN", "SWE", "RUS"],
+    "borders": ["FIN", "SWE"],
     "nativeName": "Norge",
     "numericCode": "578",
     "flags": {
@@ -11957,7 +11956,7 @@
     "area": 312679,
     "gini": 30.2,
     "timezones": ["UTC+01:00"],
-    "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
+    "borders": ["BLR", "CZE", "DEU", "LTU", "SVK", "UKR"],
     "nativeName": "Polska",
     "numericCode": "616",
     "flags": {
@@ -12385,99 +12384,6 @@
       }
     ],
     "cioc": "ROU",
-    "independent": true
-  },
-  {
-    "name": "Russian Federation",
-    "topLevelDomain": [".ru"],
-    "alpha2Code": "RU",
-    "alpha3Code": "RUS",
-    "callingCodes": ["7"],
-    "capital": "Moscow",
-    "altSpellings": [
-      "RU",
-      "Rossiya",
-      "Russian Federation",
-      "Российская Федерация",
-      "Rossiyskaya Federatsiya"
-    ],
-    "subregion": "Eastern Europe",
-    "region": "Europe",
-    "population": 144104080,
-    "latlng": [60, 100],
-    "demonym": "Russian",
-    "area": 17124442,
-    "gini": 37.5,
-    "timezones": [
-      "UTC+03:00",
-      "UTC+04:00",
-      "UTC+06:00",
-      "UTC+07:00",
-      "UTC+08:00",
-      "UTC+09:00",
-      "UTC+10:00",
-      "UTC+11:00",
-      "UTC+12:00"
-    ],
-    "borders": [
-      "AZE",
-      "BLR",
-      "CHN",
-      "EST",
-      "FIN",
-      "GEO",
-      "KAZ",
-      "PRK",
-      "LVA",
-      "LTU",
-      "MNG",
-      "NOR",
-      "POL",
-      "UKR"
-    ],
-    "nativeName": "Россия",
-    "numericCode": "643",
-    "flags": {
-      "svg": "https://flagcdn.com/ru.svg",
-      "png": "https://flagcdn.com/w320/ru.png"
-    },
-    "currencies": [
-      {
-        "code": "RUB",
-        "name": "Russian ruble",
-        "symbol": "₽"
-      }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ru",
-        "iso639_2": "rus",
-        "name": "Russian",
-        "nativeName": "Русский"
-      }
-    ],
-    "translations": {
-      "br": "Rusia",
-      "pt": "Rússia",
-      "nl": "Rusland",
-      "hr": "Rusija",
-      "fa": "روسیه",
-      "de": "Russland",
-      "es": "Rusia",
-      "fr": "Russie",
-      "ja": "ロシア連邦",
-      "it": "Russia",
-      "hu": "Oroszország"
-    },
-    "flag": "https://flagcdn.com/ru.svg",
-    "regionalBlocs": [
-      {
-        "acronym": "EEU",
-        "name": "Eurasian Economic Union",
-        "otherAcronyms": ["EAEU"]
-      }
-    ],
-    "cioc": "RUS",
     "independent": true
   },
   {
@@ -15887,7 +15793,7 @@
     "area": 603700,
     "gini": 26.6,
     "timezones": ["UTC+02:00"],
-    "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"],
+    "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "SVK"],
     "nativeName": "Україна",
     "numericCode": "804",
     "flags": {
