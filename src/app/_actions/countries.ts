@@ -6,4 +6,11 @@ export const getCountries = async (): Promise<CountryBasic[]> =>
 
 export const getCountry = async (
     ...args: Parameters<typeof internalApi.countries.getByCode>
-): Promise<CountryExtended> => await internalApi.countries.getByCode(...args);
+): Promise<CountryExtended> => {
+    try {
+        return await internalApi.countries.getByCode(...args);
+    } catch (e) {
+        console.error(e);
+        return null;
+    }
+};
