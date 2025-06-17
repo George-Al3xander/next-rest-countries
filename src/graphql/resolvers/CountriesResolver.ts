@@ -12,7 +12,9 @@ export class CountryResolver {
     @Query(() => Country, { nullable: true })
     country(@Arg("code", () => String) code: string): Country | null {
         const country = data.find(
-            (c) => c.alpha2Code.toLowerCase() === code.toLowerCase(),
+            (c) =>
+                c.alpha2Code.toLowerCase() === code.toLowerCase() ||
+                c.alpha3Code.toLowerCase() === code.toLowerCase(),
         );
 
         if (!country) throw new Error("Country not found");
