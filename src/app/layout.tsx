@@ -23,6 +23,7 @@ export default function RootLayout({ children }: LayoutProps) {
                                 <ModeToggle />
                             </>
                         }
+                        subheader="Subheader"
                     >
                         {children}
                     </TemplateScaffold>
