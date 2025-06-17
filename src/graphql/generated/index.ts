@@ -139,6 +139,7 @@ export type GetCountryQuery = {
     country?: {
         __typename?: "Country";
         name: string;
+        nativeName: string;
         flag: string;
         population: number;
         region: string;
@@ -168,6 +169,7 @@ export const GetCountryDocument = gql`
     query getCountry($code: String!) {
         country(code: $code) {
             name
+            nativeName
             flag
             population
             region

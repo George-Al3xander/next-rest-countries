@@ -1,6 +1,7 @@
 query getCountry($code: String!) {
     country(code: $code) {
         name
+        nativeName
         flag
         population
         region
