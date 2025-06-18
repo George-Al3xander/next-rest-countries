@@ -5,6 +5,7 @@ import { TemplateScaffold } from "@/ui/components/templates/Scaffold";
 import { geistMono, geistSans } from "@/ui/fonts";
 import { Logo } from "./_components/Logo";
 import { ModeToggle } from "./_components/ModeToggle";
+import { Subheader } from "./_components/Subheader";
 
 export { metadata } from "@/configs/metadata";
 
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps) {
                                 <ModeToggle />
                             </>
                         }
-                        subheader="Subheader"
+                        subheader={<Subheader />}
                     >
                         {children}
                     </TemplateScaffold>
