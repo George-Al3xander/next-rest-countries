@@ -87,6 +87,7 @@ export type Query = {
     __typename?: "Query";
     countries: Array<Country>;
     country?: Maybe<Country>;
+    regions: Array<Scalars["String"]["output"]>;
 };
 
 export type QueryCountriesArgs = {
@@ -159,6 +160,10 @@ export type GetCountryQuery = {
     } | null;
 };
 
+export type GetRegionsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetRegionsQuery = { __typename?: "Query"; regions: Array<string> };
+
 export const GetCountriesDocument = gql`
     query getCountries($query: String) {
         countries(query: $query) {
@@ -191,6 +196,11 @@ export const GetCountryDocument = gql`
             }
             borders
         }
+    }
+`;
+export const GetRegionsDocument = gql`
+    query getRegions {
+        regions
     }
 `;
 
@@ -251,6 +261,27 @@ export function getSdk(
                         signal,
                     }),
                 "getCountry",
+                "query",
+                variables,
+            );
+        },
+        getRegions(
+            variables?: GetRegionsQueryVariables,
+            requestHeaders?: GraphQLClientRequestHeaders,
+            signal?: RequestInit["signal"],
+        ): Promise<GetRegionsQuery> {
+            return withWrapper(
+                (wrappedRequestHeaders) =>
+                    client.request<GetRegionsQuery>({
+                        document: GetRegionsDocument,
+                        variables,
+                        requestHeaders: {
+                            ...requestHeaders,
+                            ...wrappedRequestHeaders,
+                        },
+                        signal,
+                    }),
+                "getRegions",
                 "query",
                 variables,
             );

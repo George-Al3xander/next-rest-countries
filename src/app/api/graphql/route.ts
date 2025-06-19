@@ -1,11 +1,11 @@
-import { CountryResolver } from "@/graphql/resolvers";
+import { CountryResolver, RegionsResolver } from "@/graphql/resolvers";
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { NextRequest } from "next/server";
 import { buildSchema } from "type-graphql";
 
 const schema = await buildSchema({
-    resolvers: [CountryResolver],
+    resolvers: [CountryResolver, RegionsResolver],
 });
 
 const server = new ApolloServer({ schema });
