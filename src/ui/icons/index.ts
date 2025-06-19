@@ -1,1 +1,6 @@
-export { MoveLeft as ArrowLeftIcon, MoonIcon, SunIcon } from "lucide-react";
+export {
+    MoveLeft as ArrowLeftIcon,
+    MoonIcon,
+    SearchIcon,
+    SunIcon,
+} from "lucide-react";
