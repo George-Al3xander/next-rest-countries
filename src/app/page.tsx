@@ -1,10 +1,12 @@
 import { PageProps } from "@/types/app";
 import { CountryGrid } from "./_components/CountryGrid";
 
-export default async function Home({}: PageProps) {
+export default async function Home({ searchParams }: PageProps) {
+    const query = (await searchParams).q;
+
     return (
         <section aria-label="Countries List">
-            <CountryGrid />
+            <CountryGrid query={query} />
         </section>
     );
 }

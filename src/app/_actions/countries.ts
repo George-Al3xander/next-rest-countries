@@ -1,8 +1,9 @@
 import * as internalApi from "@/services/api/internal";
 import { CountryBasic, CountryExtended } from "@/types/models/country";
 
-export const getCountries = async (): Promise<CountryBasic[]> =>
-    await internalApi.countries.findAll();
+export const getCountries = async (
+    ...args: Parameters<typeof internalApi.countries.findAll>
+): Promise<CountryBasic[]> => await internalApi.countries.findAll(...args);
 
 export const getCountry = async (
     ...args: Parameters<typeof internalApi.countries.getByCode>

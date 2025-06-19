@@ -89,6 +89,10 @@ export type Query = {
     country?: Maybe<Country>;
 };
 
+export type QueryCountriesArgs = {
+    query?: InputMaybe<Scalars["String"]["input"]>;
+};
+
 export type QueryCountryArgs = {
     code: Scalars["String"]["input"];
 };
@@ -115,7 +119,9 @@ export type Translations = {
     pt: Scalars["String"]["output"];
 };
 
-export type GetCountriesQueryVariables = Exact<{ [key: string]: never }>;
+export type GetCountriesQueryVariables = Exact<{
+    query?: InputMaybe<Scalars["String"]["input"]>;
+}>;
 
 export type GetCountriesQuery = {
     __typename?: "Query";
@@ -154,8 +160,8 @@ export type GetCountryQuery = {
 };
 
 export const GetCountriesDocument = gql`
-    query getCountries {
-        countries {
+    query getCountries($query: String) {
+        countries(query: $query) {
             name
             flag
             population
