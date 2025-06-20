@@ -1,5 +1,6 @@
 export {
     MoveLeft as ArrowLeftIcon,
+    LoaderIcon,
     MoonIcon,
     SearchIcon,
     SunIcon,
