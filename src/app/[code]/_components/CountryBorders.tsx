@@ -18,7 +18,7 @@ export const CountryBorders: FC<CountryBordersProps> = async ({ borders }) => {
     return (
         <div className="flex flex-col gap-4">
             <h3 className="font-bold">Border countries:</h3>
-            <ul className="flex flex-wrap gap-4">
+            <ul className="flex flex-col flex-wrap gap-6 md:flex-row md:content-start">
                 {validCountries.map(({ name, alpha2Code }) => (
                     <li key={alpha2Code}>
                         <Link
