@@ -2,12 +2,10 @@ import { FC } from "react";
 import { getCountries } from "../_actions/countries";
 import { CountryCard } from "./CountryCard";
 
-type Props = { query?: string | string[] };
+type Props = { query?: string; region?: string };
 
-export const CountryGrid: FC<Props> = async ({ query }) => {
-    const countries = await getCountries(
-        query ? (Array.isArray(query) ? query[0] : query) : undefined,
-    );
+export const CountryGrid: FC<Props> = async ({ query, region }) => {
+    const countries = await getCountries(query, region);
 
     if (countries.length === 0) {
         return (
