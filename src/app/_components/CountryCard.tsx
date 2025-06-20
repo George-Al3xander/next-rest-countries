@@ -15,7 +15,7 @@ export const CountryCard = ({
     const data = DISPLAY_FIELDS.map((k) => ({ title: k, value: props[k] }));
     return (
         <Link
-            className="flex h-full flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-xl"
+            className="flex h-full flex-col overflow-hidden rounded-xl bg-card text-card-foreground shadow-xl transition-all hover:scale-95 hover:opacity-60"
             href={`/${alpha2Code.toLowerCase()}`}
             aria-label={`View details for ${name}`}
         >
