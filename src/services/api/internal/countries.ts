@@ -8,11 +8,12 @@ import { internalClient } from "@/services/libs/internalClient";
 import { CountryBasic, CountryExtended } from "@/types/models/country";
 
 export const findAll = async (
-    searchQuery?: string,
+    query?: string,
+    region?: string,
 ): Promise<CountryBasic[]> => {
     const { data } = await internalClient.query<GetCountriesQuery>({
         query: GetCountriesDocument,
-        variables: { query: searchQuery },
+        variables: { query, region },
     });
 
     return data.countries;
