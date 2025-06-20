@@ -7,10 +7,15 @@ import data from "../../../public/json/data.json";
 export class CountryResolver {
     @Query(() => [Country])
     countries(
-        @Arg("query", () => String, { nullable: true }) query: string | null,
+        @Arg("query", () => String, { nullable: true })
+        query: string | null,
+        @Arg("region", () => String, { nullable: true })
+        region: string | null,
     ): Country[] {
+        let countries = data;
+
         if (query) {
-            return data.filter((country) =>
+            countries = countries.filter((country) =>
                 findInObject({
                     source: country,
                     query,
@@ -24,7 +29,14 @@ export class CountryResolver {
                 }),
             );
         }
-        return data;
+
+        if (region) {
+            countries = countries.filter(
+                (c) => c.region.toUpperCase() === region.toUpperCase(),
+            );
+        }
+
+        return countries;
     }
 
     @Query(() => Country, { nullable: true })

@@ -1,5 +1,5 @@
-query getCountries ($query: String) {
-    countries (query: $query) {
+query getCountries ($query: String, $region: String) {
+    countries (query: $query, region: $region) {
         name
         flag
         population
