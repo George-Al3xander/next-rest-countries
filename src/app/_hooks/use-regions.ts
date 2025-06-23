@@ -15,15 +15,19 @@ export const useRegions = () => {
         },
     );
     const isUnavailable = loading || !!error || !data?.regions;
+
     const regions = [ALL_REGIONS_VALUE, ...(data?.regions ?? [])].map((s) =>
         s.toLowerCase(),
     );
 
     const { searchParams, setSearchParam } = useModifySearchParams();
+
     const currentRegion = (
         searchParams.get(SEARCH_QUERY_KEY) || ALL_REGIONS_VALUE
     ).toLowerCase();
+
     const clearRegion = () => setSearchParam(SEARCH_QUERY_KEY, "");
+
     const setRegion = (value: string) => {
         if (value.toLowerCase() === ALL_REGIONS_VALUE.toLowerCase())
             clearRegion();
